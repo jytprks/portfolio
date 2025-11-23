@@ -1,4 +1,4 @@
 import Navbar from '#components/Navbar.jsx'
 import Welcome from '#components/Welcome.jsx'
-
-export { Welcome, Navbar }
+import Dock from '#components/Dock.jsx'
+export { Welcome, Navbar, Dock }
