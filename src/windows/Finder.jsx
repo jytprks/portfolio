@@ -5,9 +5,18 @@ import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import {locations} from "#constraints";
 import useLocation from "#store/location.js";
 import clsx from "clsx";
+import useWindowStore from "#store/window.js";
 
 const Finder = () => {
     const {activeLocation,setActiveLocation} = useLocation()
+    const { openWindow } = useWindowStore()
+    const openItem = (item) =>{
+        if(item.fileType === 'pdf') return openWindow("resume")
+        if(item.kind === 'folder') return setActiveLocation(item)
+        if(['fig', 'url'].includes(item.fileType) && item.href) return window.open(item.href, '_blank')
+
+        openWindow(`${item.fileType}${item.kind}`, item)
+    }
     const renderList = (name, items) => (
         <div>
             <h3>{name}</h3>
@@ -37,6 +46,19 @@ const Finder = () => {
                     {renderList("Favorites",Object.values(locations))}
                     {renderList("Works",locations.work.children)}
                 </div>
+                <ul className="content">
+                    {
+                        activeLocation?.children.map((item) =>(
+                            <li
+                                key={item.id}
+                                className={item.position}
+                                onClick={()=> openItem(item)}>
+                                <img src={item.icon} alt={item.name}/>
+                                <p>{item.name}</p>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         </>
     )
