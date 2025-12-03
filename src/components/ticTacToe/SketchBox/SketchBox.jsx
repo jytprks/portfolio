@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import rough from "roughjs/bundled/rough.esm.js";
-import cross_light from "../../assets/x_light.png";
-import circle_light from "../../assets/Subtract.png";
-import tacSound from "../../assets/tac-sound.mp3";  // Add your sound file
+import cross_light from "../../../assets/x_light.png";
+import circle_light from "../../../assets/Subtract.png";
+import tacSound from "../../../assets/tac-sound.mp3";  // Add your sound file
 import "./SketchBox.css";
 
 const SketchBox = ({ value, onClick, currentTurn, wincolor, isWin }) => {
