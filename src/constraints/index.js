@@ -204,6 +204,17 @@ const gallery = [
     },
 ];
 
+const installedApps = [
+    {
+        id: 1,
+        icon: "/icons/tictactoe.png",
+        disPlayName: "Tic Tac Toe",
+        name: "ticTacToe",
+        position: "top-10 left-5", // icon position inside Finder
+        windowPosition: "top-[50vh] left-10", // optional: Finder window position
+    }
+];
+
 export {
     navLinks,
     navIcons,
@@ -213,6 +224,7 @@ export {
     socials,
     photosLinks,
     gallery,
+    installedApps,
 };
 
 const WORK_LOCATION = {
@@ -501,6 +513,7 @@ const WINDOW_CONFIG = {
     terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
     imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+    ticTacToe: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

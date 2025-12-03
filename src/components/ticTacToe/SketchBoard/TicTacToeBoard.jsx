@@ -1,7 +1,7 @@
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SketchBox from "../SketchBox/SketchBox";
 import "./TicTacToeBoard.css";
-import winSound from "../../assets/winsound.wav"; // Add this import
+import winSound from "../../../assets/winsound.wav"; // Add this import
 
 let data = ["", "", "", "", "", "", "", "", ""];
 
